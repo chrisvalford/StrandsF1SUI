@@ -14,14 +14,14 @@ struct DriverNumberView: View {
     var body: some View {
         Text(number)
             .font(.title3)
-            .fontWeight(.heavy)
+            .fontWeight(.bold)
             .italic()
-            .frame(width: 32, height: 32, alignment: .center)
+            .frame(width: 33, height: 33, alignment: .center)
             .padding()
             .overlay(
                 Circle()
-                    .stroke(Color.black, lineWidth: 8)
-                    .padding(4)
+                    .stroke(Color.black, lineWidth: 7)
+                    .padding(6)
             )
     }
 }
