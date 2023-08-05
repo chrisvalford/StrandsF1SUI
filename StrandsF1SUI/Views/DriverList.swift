@@ -9,13 +9,12 @@ import SwiftUI
 
 struct DriverList: View {
 
-    let model = DriverModel()
+    @StateObject var model = DriverModel()
     @State private var searchText = ""
-    @State private var isShowingSort = false
     
     var body: some View {
         NavigationStack {
-            List(model.drivers, id: \.self) { driver in
+            List(model.sortedDrivers, id: \.self) { driver in
                 NavigationLink(destination: DriverDetailView(driver: driver)) {
                     DriverListCell(driver: driver)
                         .frame(height: 100)
@@ -26,15 +25,24 @@ struct DriverList: View {
             .navigationTitle(model.seriesTitle)
             .searchable(text: $searchText, prompt: "Filter drivers")
             .toolbar {
-                Button {
-                    isShowingSort.toggle()
-                } label: { Image(systemName: "arrow.up.arrow.down") }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu(content: {
+                        Picker("Sort by",
+                               selection: $model.selectedSort
+                        ) {
+                            ForEach(SortByField.allCases) { text in
+                                Text("\(text.description)")
+                            }
+                        }
+                    }, label: { Image(systemName: "arrow.up.arrow.down") } )
+                }
             }
         }
     }
 }
 
 struct DriverList_Previews: PreviewProvider {
+
     static var previews: some View {
         DriverList()
     }

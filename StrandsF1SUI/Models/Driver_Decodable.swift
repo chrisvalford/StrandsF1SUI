@@ -49,5 +49,12 @@ struct Driver: Decodable, Identifiable {
 }
 
 extension Driver: Hashable {
-    
+
+    static func == (lhs: Driver, rhs: Driver) -> Bool {
+        return lhs.driverId == rhs.driverId
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(driverId)
+    }
 }

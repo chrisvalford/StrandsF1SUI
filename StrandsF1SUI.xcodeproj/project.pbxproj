@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F49D64D2A7D1A40000C4484 /* DriverNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49D64C2A7D1A40000C4484 /* DriverNumberView.swift */; };
+		2F4C9D962A7E44D000DBD1C7 /* SortByField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4C9D952A7E44D000DBD1C7 /* SortByField.swift */; };
 		2F8C86A72A7CDBEB00E5EF82 /* StrandsF1SUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C86A62A7CDBEB00E5EF82 /* StrandsF1SUIApp.swift */; };
 		2F8C86A92A7CDBEB00E5EF82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C86A82A7CDBEB00E5EF82 /* ContentView.swift */; };
 		2F8C86AB2A7CDBEC00E5EF82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8C86AA2A7CDBEC00E5EF82 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		2F49D64C2A7D1A40000C4484 /* DriverNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverNumberView.swift; sourceTree = "<group>"; };
+		2F4C9D952A7E44D000DBD1C7 /* SortByField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByField.swift; sourceTree = "<group>"; };
 		2F8C86A32A7CDBEB00E5EF82 /* StrandsF1SUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrandsF1SUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8C86A62A7CDBEB00E5EF82 /* StrandsF1SUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrandsF1SUIApp.swift; sourceTree = "<group>"; };
 		2F8C86A82A7CDBEB00E5EF82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				2F8C86E32A7CE01700E5EF82 /* CoreData */,
 				2F8C86D92A7CDDCD00E5EF82 /* DriverModel.swift */,
+				2F4C9D952A7E44D000DBD1C7 /* SortByField.swift */,
 				2F8C86DA2A7CDDCD00E5EF82 /* drivers.json */,
 				2F8C86D62A7CDDC100E5EF82 /* Driver_Decodable.swift */,
 				2F8C86F02A7D0B6900E5EF82 /* CountryLookup.swift */,
@@ -324,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4C9D962A7E44D000DBD1C7 /* SortByField.swift in Sources */,
 				2F8C86EB2A7D025000E5EF82 /* DriverListCell.swift in Sources */,
 				2F8C86B32A7CDBEC00E5EF82 /* StrandsF1SUI.xcdatamodeld in Sources */,
 				2F8C86F12A7D0B6900E5EF82 /* CountryLookup.swift in Sources */,

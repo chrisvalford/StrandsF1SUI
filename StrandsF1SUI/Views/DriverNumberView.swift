@@ -13,7 +13,7 @@ struct DriverNumberView: View {
 
     var body: some View {
         Text(number)
-            .font(.title2)
+            .font(.title3)
             .fontWeight(.heavy)
             .italic()
             .frame(width: 32, height: 32, alignment: .center)

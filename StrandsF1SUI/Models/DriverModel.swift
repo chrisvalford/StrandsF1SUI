@@ -11,8 +11,16 @@ class DriverModel: ObservableObject {
 
     @Published var drivers: [Driver] = []
     @Published var seriesTitle: String = ""
+    @Published var selectedSort = SortByField.none
 
     init() {
+        read()
+//        Task {
+//            await fetch()
+//        }
+    }
+
+    func read() {
         if let fileLocation = Bundle.main.url(forResource: "drivers", withExtension: "json"){
             do {
                 let data = try Data(contentsOf: fileLocation)
@@ -24,9 +32,6 @@ class DriverModel: ObservableObject {
                 print(error)
             }
         }
-//        Task {
-//            await fetch()
-//        }
     }
 
     func fetch() async {
@@ -48,6 +53,26 @@ class DriverModel: ObservableObject {
             print(error)
         }
     }
+
+    var sortedDrivers: [Driver] {
+            get {
+                switch selectedSort {
+                case .none:
+                    return drivers
+                case .name:
+                    return drivers.sorted(by: { $0.fullName < $1.fullName })
+                case .permanentNumber:
+                    return drivers.sorted(by: { Int($0.permanentNumber) ?? 0 < Int($1.permanentNumber) ?? 0 })
+                case .age:
+                    return drivers.sorted(by: { $0.age < $1.age })
+                case .nationality:
+                    return drivers.sorted(by: { $0.nationality < $1.nationality })
+                }
+            }
+            set {
+                drivers = newValue
+            }
+        }
 
     func driverList() -> [DriverListItem] {
         var items: [DriverListItem] = []
@@ -74,6 +99,23 @@ class DriverModel: ObservableObject {
                                 nationality: driver.nationality)
     }
 
+    func sortBy(field: SortByField) {
+        switch field {
+        case .none:
+            read()
+    //        Task {
+    //            await fetch()
+    //        }
+        case .name:
+            drivers.sort(by: { $0.fullName < $1.fullName })
+        case .permanentNumber:
+            drivers.sort(by: { Int($0.permanentNumber) ?? 0 < Int($1.permanentNumber) ?? 0 })
+        case .age:
+            drivers.sort(by: { $0.age < $1.age })
+        case .nationality:
+            drivers.sort(by: { $0.nationality < $1.nationality })
+        }
+    }
 }
 
 
