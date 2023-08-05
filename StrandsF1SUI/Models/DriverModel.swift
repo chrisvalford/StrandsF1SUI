@@ -12,6 +12,7 @@ class DriverModel: ObservableObject {
     @Published var drivers: [Driver] = []
     @Published var seriesTitle: String = ""
     @Published var selectedSort = SortByField.none
+    @Published var searchText = ""
 
     init() {
         read()
@@ -55,24 +56,29 @@ class DriverModel: ObservableObject {
     }
 
     var sortedDrivers: [Driver] {
-            get {
-                switch selectedSort {
-                case .none:
-                    return drivers
-                case .name:
-                    return drivers.sorted(by: { $0.fullName < $1.fullName })
-                case .permanentNumber:
-                    return drivers.sorted(by: { Int($0.permanentNumber) ?? 0 < Int($1.permanentNumber) ?? 0 })
-                case .age:
-                    return drivers.sorted(by: { $0.age < $1.age })
-                case .nationality:
-                    return drivers.sorted(by: { $0.nationality < $1.nationality })
-                }
+        get {            var filteredDrivers: [Driver] = []
+            if searchText.isEmpty {
+                filteredDrivers = drivers
+            } else {
+                filteredDrivers = drivers.filter { $0.fullName.localizedCaseInsensitiveContains(searchText) }
             }
-            set {
-                drivers = newValue
+            switch selectedSort {
+            case .none:
+                return filteredDrivers
+            case .name:
+                return filteredDrivers.sorted(by: { $0.fullName < $1.fullName })
+            case .permanentNumber:
+                return filteredDrivers.sorted(by: { Int($0.permanentNumber) ?? 0 < Int($1.permanentNumber) ?? 0 })
+            case .age:
+                return filteredDrivers.sorted(by: { $0.age < $1.age })
+            case .nationality:
+                return filteredDrivers.sorted(by: { $0.nationality < $1.nationality })
             }
         }
+        set {
+            drivers = newValue
+        }
+    }
 
     func driverList() -> [DriverListItem] {
         var items: [DriverListItem] = []

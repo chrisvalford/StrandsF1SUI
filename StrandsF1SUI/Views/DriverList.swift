@@ -10,7 +10,6 @@ import SwiftUI
 struct DriverList: View {
 
     @StateObject var model = DriverModel()
-    @State private var searchText = ""
     
     var body: some View {
         NavigationStack {
@@ -23,7 +22,7 @@ struct DriverList: View {
             }
             .listStyle(PlainListStyle())
             .navigationTitle(model.seriesTitle)
-            .searchable(text: $searchText, prompt: "Filter drivers")
+            .searchable(text: $model.searchText, prompt: "Filter drivers")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu(content: {
