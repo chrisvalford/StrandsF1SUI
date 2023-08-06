@@ -18,6 +18,11 @@ struct RaceResult: Identifiable {
     }
 }
 
+/**
+ * Model for the `DriverDetailView`
+ *
+ * Becides the drivers details, race results are created.
+ */
 class DriverDetailModel: ObservableObject {
 
     @Published var races: [Races] = []
@@ -42,7 +47,10 @@ class DriverDetailModel: ObservableObject {
         }
     }
 
-    func fetch(forDriverId id: String) async -> [Races] {
+    /**
+     * fetch and decode specific driver  and result data from ergast service
+     */
+    private func fetch(forDriverId id: String) async -> [Races] {
         do {
             guard let url = URL(string: "https://ergast.com/api/f1/current/drivers/\(id)/results.json") else {
                 return []

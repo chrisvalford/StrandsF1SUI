@@ -25,7 +25,7 @@ struct DriverDetailView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("Age: \(model.driver.age)")
-                            Text("\(model.driver.nationality ?? "") \(flag(forNationality: model.driver.nationality ?? ""))")
+                            Text("\(model.driver.nationality ?? "") \(CountryLookup.flag(forNationality: model.driver.nationality ?? ""))")
                         }
                         Text("Team: \(model.constructor?.name ?? "")")
                             .font(.subheadline)

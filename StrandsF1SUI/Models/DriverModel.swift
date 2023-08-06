@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ * Model for the `DriverList` view
+ */
 class DriverModel: ObservableObject {
 
     @Published var drivers: [Driver] = []
@@ -20,7 +23,10 @@ class DriverModel: ObservableObject {
         }
     }
 
-    func fetch() async {
+    /**
+     * fetch and decode all driver data from ergast service
+     */
+    private func fetch() async {
         do {
             guard let url = URL(string: "https://ergast.com/api/f1/current/drivers.json") else {
                 return
@@ -42,6 +48,11 @@ class DriverModel: ObservableObject {
         }
     }
 
+    /**
+     * Array of `Driver`s sorted by 'selectedSort`
+     *
+     * If `searchText` has a value the `drivers` array is filtered first.
+     */
     var sortedDrivers: [Driver] {
         get {
             var filteredDrivers: [Driver] = []

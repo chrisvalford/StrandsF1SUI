@@ -18,7 +18,7 @@ struct DriverListCell: View {
                         .font(.title)
                 HStack {
                         Text("age: \(driver.age)")
-                        Text("\(driver.nationality ?? "") \(flag(forNationality: driver.nationality ?? ""))")
+                    Text("\(driver.nationality ?? "") \(CountryLookup.flag(forNationality: driver.nationality ?? ""))")
                     }
                 }
             Spacer()
