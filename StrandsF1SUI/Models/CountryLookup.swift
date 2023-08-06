@@ -14,8 +14,6 @@ func flag(forNationality: String) -> String {
         return String(UnicodeScalar(0x1F3F3)!)
     }
     return flag(forCountry: code)
-
-   // (U+1F3F3, U+FE0F)
 }
 
 func flag(forCountry code: String) -> String {

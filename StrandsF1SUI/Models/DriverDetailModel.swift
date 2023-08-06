@@ -56,8 +56,6 @@ class DriverDetailModel: ObservableObject {
             let jsonDecoder = JSONDecoder()
             let results = try jsonDecoder.decode(RaceDataRoot.self, from: data)
             return results.mrData?.raceTable?.races ?? []
-//            drivers = results.mrData?.driverTable?.drivers ?? []
-//            seriesTitle = "\(results.mrData?.series ?? "") - \(results.mrData?.driverTable?.season ?? "") Season"
         } catch {
             print(error)
             return []

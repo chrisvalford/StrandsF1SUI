@@ -14,8 +14,6 @@ struct StrandsF1SUIApp: App {
     var body: some Scene {
         WindowGroup {
             DriverList()
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
