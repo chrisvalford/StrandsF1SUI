@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct RaceListCell: View {
+
+    var race: Races
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text("Round: ")
+            Text(race.round ?? "")
+            Spacer()
+        }
+        Text(race.circuit?.circuitName ?? "")
+        HStack {
+            Text(race.date ?? "")
+            Spacer()
+            Text("Finished: ")
+            Text(race.results?[0].position ?? "")
+        }
     }
 }
 
-struct RaceListCell_Previews: PreviewProvider {
-    static var previews: some View {
-        RaceListCell()
-    }
-}
+//struct RaceListCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RaceListCell()
+//    }
+//}

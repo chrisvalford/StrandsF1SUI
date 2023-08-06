@@ -1,5 +1,5 @@
 //
-//  API.swift
+//  DriverModel.swift
 //  StrandsF1
 //
 //  Created by Christopher Alford on 1/8/23.
@@ -15,23 +15,8 @@ class DriverModel: ObservableObject {
     @Published var searchText = ""
 
     init() {
-        read()
-//        Task {
-//            await fetch()
-//        }
-    }
-
-    func read() {
-        if let fileLocation = Bundle.main.url(forResource: "drivers", withExtension: "json"){
-            do {
-                let data = try Data(contentsOf: fileLocation)
-                let jsonDecoder = JSONDecoder()
-                let results = try jsonDecoder.decode(DriverListRoot.self, from: data)
-                drivers = results.MRData.DriverTable.Drivers
-                seriesTitle = "\(results.MRData.series) - \(results.MRData.DriverTable.season) Season"
-            } catch {
-                print(error)
-            }
+        Task {
+            await fetch()
         }
     }
 
@@ -47,16 +32,19 @@ class DriverModel: ObservableObject {
                 return
             }
             let jsonDecoder = JSONDecoder()
-            let results = try jsonDecoder.decode(DriverListRoot.self, from: data)
-            drivers = results.MRData.DriverTable.Drivers
-            seriesTitle = "\(results.MRData.series) - \(results.MRData.DriverTable.season) Season"
+            let results = try jsonDecoder.decode(DriverDataRoot.self, from: data)
+            DispatchQueue.main.async {
+                self.drivers = results.mrData?.driverTable?.drivers ?? []
+                self.seriesTitle = "\(results.mrData?.series ?? "") - \(results.mrData?.driverTable?.season ?? "") Season"
+            }
         } catch {
             print(error)
         }
     }
 
     var sortedDrivers: [Driver] {
-        get {            var filteredDrivers: [Driver] = []
+        get {
+            var filteredDrivers: [Driver] = []
             if searchText.isEmpty {
                 filteredDrivers = drivers
             } else {
@@ -68,11 +56,11 @@ class DriverModel: ObservableObject {
             case .name:
                 return filteredDrivers.sorted(by: { $0.fullName < $1.fullName })
             case .permanentNumber:
-                return filteredDrivers.sorted(by: { Int($0.permanentNumber) ?? 0 < Int($1.permanentNumber) ?? 0 })
+                return filteredDrivers.sorted(by: { Int($0.permanentNumber ?? "0") ?? 0 < Int($1.permanentNumber ?? "0") ?? 0 })
             case .age:
                 return filteredDrivers.sorted(by: { $0.age < $1.age })
             case .nationality:
-                return filteredDrivers.sorted(by: { $0.nationality < $1.nationality })
+                return filteredDrivers.sorted(by: { $0.nationality ?? "" < $1.nationality ?? ""})
             }
         }
         set {
@@ -80,48 +68,47 @@ class DriverModel: ObservableObject {
         }
     }
 
-    func driverList() -> [DriverListItem] {
-        var items: [DriverListItem] = []
-        for driver in drivers {
-            items.append(DriverListItem(id: driver.driverId,
-                                        fullname: "\(driver.givenName) \(driver.familyName)",
-                                        permanentNumber: driver.permanentNumber))
-        }
-        return items
-    }
+//    func driverList() -> [DriverListItem] {
+//        var items: [DriverListItem] = []
+//        for driver in drivers {
+//            items.append(DriverListItem(id: driver.driverId ?? "",
+//                                        fullname: "\(driver.givenName ?? "") \(driver.familyName ?? "")",
+//                                        permanentNumber: driver.permanentNumber ?? ""))
+//        }
+//        return items
+//    }
+//
+//    func driver(id: String) -> Driver? {
+//        return drivers.first(where: { $0.driverId == id })
+//    }
+//
+//    func driverDetail(id: String) -> DriverDetailItem? {
+//        guard let driver = drivers.first(where: { $0.driverId == id }) else {
+//            return nil
+//        }
+//        return DriverDetailItem(id: driver.driverId ?? "",
+//                                fullname: "\(driver.givenName ?? "") \(driver.familyName ?? "")",
+//                                permanentNumber: driver.permanentNumber ?? "",
+//                                age: "\(ageInYears(from: driver.dateOfBirth ?? ""))",
+//                                nationality: driver.nationality ?? "")
+//    }
 
-    func driver(id: String) -> Driver? {
-        return drivers.first(where: { $0.driverId == id })
-    }
-
-    func driverDetail(id: String) -> DriverDetailItem? {
-        guard let driver = drivers.first(where: { $0.driverId == id }) else {
-            return nil
-        }
-        return DriverDetailItem(id: driver.driverId,
-                                fullname: "\(driver.givenName) \(driver.familyName)",
-                                permanentNumber: driver.permanentNumber,
-                                age: "\(ageInYears(from: driver.dateOfBirth))",
-                                nationality: driver.nationality)
-    }
-
-    func sortBy(field: SortByField) {
-        switch field {
-        case .none:
-            read()
-    //        Task {
-    //            await fetch()
-    //        }
-        case .name:
-            drivers.sort(by: { $0.fullName < $1.fullName })
-        case .permanentNumber:
-            drivers.sort(by: { Int($0.permanentNumber) ?? 0 < Int($1.permanentNumber) ?? 0 })
-        case .age:
-            drivers.sort(by: { $0.age < $1.age })
-        case .nationality:
-            drivers.sort(by: { $0.nationality < $1.nationality })
-        }
-    }
+//    func sortBy(field: SortByField) {
+//        switch field {
+//        case .none:
+//            Task {
+//                await fetch()
+//            }
+//        case .name:
+//            drivers.sort(by: { $0.fullName < $1.fullName })
+//        case .permanentNumber:
+//            drivers.sort(by: { Int($0.permanentNumber ?? "") ?? 0 < Int($1.permanentNumber ?? "") ?? 0 })
+//        case .age:
+//            drivers.sort(by: { $0.age < $1.age })
+//        case .nationality:
+//            drivers.sort(by: { $0.nationality ?? "" < $1.nationality ?? "" })
+//        }
+//    }
 }
 
 

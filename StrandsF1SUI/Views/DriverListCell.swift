@@ -18,14 +18,12 @@ struct DriverListCell: View {
                         .font(.title)
                 HStack {
                         Text("age: \(driver.age)")
-                        Text("\(driver.nationality) \(flag(forNationality: driver.nationality))")
+                        Text("\(driver.nationality ?? "") \(flag(forNationality: driver.nationality ?? ""))")
                     }
                 }
             Spacer()
-            DriverNumberView(number: driver.permanentNumber)
+            DriverNumberView(number: driver.permanentNumber ?? "0")
         }
-        //.padding()
-
     }
 }
 

@@ -28,6 +28,24 @@ struct Driver : Decodable {
 		case nationality = "nationality"
 	}
 
+    init(driverId : String,
+         permanentNumber : String,
+         code : String,
+         url : URL,
+         givenName : String,
+         familyName : String,
+         dateOfBirth : String,
+         nationality : String) {
+        self.driverId = driverId
+        self.permanentNumber = permanentNumber
+        self.code = code
+        self.url = url
+        self.givenName = givenName
+        self.familyName = familyName
+        self.dateOfBirth = dateOfBirth
+        self.nationality = nationality
+    }
+
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		driverId = try values.decodeIfPresent(String.self, forKey: .driverId)

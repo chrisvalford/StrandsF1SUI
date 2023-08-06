@@ -10,8 +10,12 @@ import Foundation
 let countries = ["Thai":"TH","Spanish":"ES","Finnish":"FI","Dutch":"NL","French":"FR","British":"GB","German":"DE","Monegasque":"MC","Danish":"DK","Mexican":"MX","Australian":"AU","American":"US","Canadian":"CA","Japanese":"JP","Chinese":"CN"]
 
 func flag(forNationality: String) -> String {
-    let code = countries[forNationality]
-    return flag(forCountry: code!)
+    guard let code = countries[forNationality] else {
+        return String(UnicodeScalar(0x1F3F3)!)
+    }
+    return flag(forCountry: code)
+
+   // (U+1F3F3, U+FE0F)
 }
 
 func flag(forCountry code: String) -> String {

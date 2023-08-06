@@ -25,4 +25,22 @@ func ageInYears(from dob: String) -> Int {
     return passed.year ?? 0
 }
 
+extension String {
+    func formattedDate() -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.date(from: self)
+    }
 
+    func raceDate() -> String {
+        guard let date = self.formattedDate() else {
+            return ""
+        }
+        let userLocale = Locale.autoupdatingCurrent
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = userLocale
+
+        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
+        return " \(calendarDate.day ?? 0) \(calendarDate.month ?? 0)"
+    }
+}

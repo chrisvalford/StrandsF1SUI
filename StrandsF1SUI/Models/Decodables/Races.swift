@@ -42,3 +42,18 @@ struct Races : Decodable {
 	}
 
 }
+
+extension Races: Identifiable, Hashable {
+
+    var id: String {
+        return "\(season ?? "")\(round ?? "")"
+    }
+
+    static func == (lhs: Races, rhs: Races) -> Bool {
+        return lhs.season == rhs.season && lhs.round == rhs.round
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(raceName)
+    }
+}
