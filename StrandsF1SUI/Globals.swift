@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-func ageInYears(from dob: Date) -> Int {
-    let userLocale = Locale.autoupdatingCurrent
-    var calendar = Calendar(identifier: .gregorian)
-    calendar.locale = userLocale
-
-    let passed = calendar.dateComponents([.year],
-                                         from: dob,
-                                         to: Date())
-    return passed.year ?? 0
-}
-
 //TODO: Check against device 12/24 Hr clock & different Locales
 var dateFormatter: DateFormatter {
     let formatter = DateFormatter()
@@ -27,36 +16,4 @@ var dateFormatter: DateFormatter {
     return formatter
 }
 
-extension String {
 
-    // Unwrapping
-    private func formattedDate() -> Date {
-        return dateFormatter.date(from: self) ?? Date(timeIntervalSinceReferenceDate: 0)
-    }
-
-    func raceDate() -> String {
-        let date = self.formattedDate()
-        let userLocale = Locale.autoupdatingCurrent
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.locale = userLocale
-
-        let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
-        return " \(calendarDate.day ?? 0) \(calendarDate.month ?? 0)"
-    }
-}
-
-extension Color {
-    init(position: String?) {
-        guard let position = position else {
-            self = .white
-            return
-        }
-
-        switch Int(position) ?? 99 {
-        case 0..<4:
-            self = .yellow
-        default:
-            self = .gray.opacity(0.5)
-        }
-    }
-}

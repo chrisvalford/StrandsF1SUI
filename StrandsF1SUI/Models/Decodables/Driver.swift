@@ -66,7 +66,7 @@ extension Driver: Identifiable, Hashable {
     }
 
     var age: Int {
-        return ageInYears(from: dateOfBirth)
+        return dateOfBirth.ageInYears()
     }
 
     var fullName: String {
