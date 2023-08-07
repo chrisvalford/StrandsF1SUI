@@ -13,7 +13,7 @@ struct Races : Decodable {
 	let url : String?
 	let raceName : String?
 	let circuit : Circuit?
-	let date : String?
+	let date : Date
 	let time : String?
 	let results : [Results]?
 
@@ -36,7 +36,7 @@ struct Races : Decodable {
 		url = try values.decodeIfPresent(String.self, forKey: .url)
 		raceName = try values.decodeIfPresent(String.self, forKey: .raceName)
 		circuit = try values.decodeIfPresent(Circuit.self, forKey: .circuit)
-		date = try values.decodeIfPresent(String.self, forKey: .date)
+		date = try values.decodeIfPresent(Date.self, forKey: .date) ?? Date(timeIntervalSinceReferenceDate: 0)
 		time = try values.decodeIfPresent(String.self, forKey: .time)
 		results = try values.decodeIfPresent([Results].self, forKey: .results)
 	}

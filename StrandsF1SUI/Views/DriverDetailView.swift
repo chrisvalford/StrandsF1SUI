@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Charts
 
 struct DriverDetailView: View {
 
@@ -25,7 +24,7 @@ struct DriverDetailView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("Age: \(model.driver.age)")
-                            Text("\(model.driver.nationality ?? "") \(CountryLookup.flag(forNationality: model.driver.nationality ?? ""))")
+                            Text("\(model.driver.nationality ?? "") \(CountryLookup.flag(forNationality: model.driver.nationality))")
                         }
                         Text("Team: \(model.constructor?.name ?? "")")
                             .font(.subheadline)
@@ -35,23 +34,7 @@ struct DriverDetailView: View {
                 }
             }
             .padding()
-            Text("Results:")
-                .font(.headline)
-                .padding(.horizontal)
-            Chart {
-                ForEach(model.raceResults) { result in
-                    LineMark(x: .value("Date", result.raceDate.formattedDate() ?? Date()),
-                             y: .value("position", result.position))
-                    .annotation(position: .top, alignment: .leading) {
-                        Text("\(result.position)")
-                            .font(.caption2)
-                            .padding(5)
-                            .background(result.position < 4 ? Color.yellow : Color.gray.opacity(0.5))
-                             .clipShape(Circle())
-                    }
-                }
-            }
-            .chartYScale(domain: [20, 1])
+            ResultsChart(raceResults: model.raceResults)
             .frame(height: 200)
             .padding(.horizontal)
             List(model.races, id: \.self) { race in

@@ -8,13 +8,13 @@
 import Foundation
 
 struct RaceResult: Identifiable {
-    let raceDate: String
+    let raceDate: Date
     let driverId: String
     let position: Int
     let points: Int
 
     var id: String {
-        return "\(raceDate)\(driverId)"
+        return "\(raceDate.description)\(driverId)"
     }
 }
 
@@ -34,9 +34,9 @@ class DriverDetailModel: ObservableObject {
         self.driver = driver
         Task {
             races = await fetch(forDriverId: driver.driverId ?? "")
-            for race in races {
+            for race in self.races {
                 for result in race.results! {
-                    let raceResult = RaceResult(raceDate: race.date!,
+                    let raceResult = RaceResult(raceDate: race.date,
                                                 driverId: (result.driver?.driverId)!,
                                                 position: Int(result.position!) ?? 0,
                                                 points: Int(result.points!) ?? 0)
@@ -61,8 +61,9 @@ class DriverDetailModel: ObservableObject {
                 print("Invalid Response")
                 return []
             }
-            let jsonDecoder = JSONDecoder()
-            let results = try jsonDecoder.decode(RaceDataRoot.self, from: data)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            let results = try decoder.decode(RaceDataRoot.self, from: data)
             return results.mrData?.raceTable?.races ?? []
         } catch {
             print(error)

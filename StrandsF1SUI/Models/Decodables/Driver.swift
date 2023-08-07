@@ -14,7 +14,7 @@ struct Driver : Decodable {
 	let url : URL?
 	let givenName : String?
 	let familyName : String?
-	let dateOfBirth : String?
+	var dateOfBirth : Date
 	let nationality : String?
 
 	enum CodingKeys: String, CodingKey {
@@ -34,7 +34,7 @@ struct Driver : Decodable {
          url : URL,
          givenName : String,
          familyName : String,
-         dateOfBirth : String,
+         dateOfBirth : Date,
          nationality : String) {
         self.driverId = driverId
         self.permanentNumber = permanentNumber
@@ -54,7 +54,7 @@ struct Driver : Decodable {
 		url = try values.decodeIfPresent(URL.self, forKey: .url)
 		givenName = try values.decodeIfPresent(String.self, forKey: .givenName)
 		familyName = try values.decodeIfPresent(String.self, forKey: .familyName)
-		dateOfBirth = try values.decodeIfPresent(String.self, forKey: .dateOfBirth)
+		dateOfBirth = try values.decodeIfPresent(Date.self, forKey: .dateOfBirth) ?? Date(timeIntervalSinceReferenceDate: 0)
 		nationality = try values.decodeIfPresent(String.self, forKey: .nationality)
 	}
 }
@@ -64,8 +64,9 @@ extension Driver: Identifiable, Hashable {
     var id: String {
         return driverId ?? ""
     }
+
     var age: Int {
-        return ageInYears(from: dateOfBirth ?? "01/01/1900")
+        return ageInYears(from: dateOfBirth)
     }
 
     var fullName: String {

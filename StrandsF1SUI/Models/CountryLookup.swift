@@ -15,8 +15,9 @@ struct CountryLookup {
      * - Parameter forNationality: the nationality i.e. French
      * - Returns: The unicode string for the nationalities flag, or a blank (🏳️) flag if the nationality cannot be found.
      */
-    static func flag(forNationality: String) -> String {
-        guard let code = CountryLookup.countries[forNationality] else {
+    static func flag(forNationality: String?) -> String {
+        guard let forNationality = forNationality,
+                let code = CountryLookup.countries[forNationality] else {
             return String(UnicodeScalar(0x1F3F3)!)
         }
         return flag(forCountry: code)

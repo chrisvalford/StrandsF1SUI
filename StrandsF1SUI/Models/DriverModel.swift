@@ -37,8 +37,9 @@ class DriverModel: ObservableObject {
                 print("Invalid Response")
                 return
             }
-            let jsonDecoder = JSONDecoder()
-            let results = try jsonDecoder.decode(DriverDataRoot.self, from: data)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            let results = try decoder.decode(DriverDataRoot.self, from: data)
             DispatchQueue.main.async {
                 self.drivers = results.mrData?.driverTable?.drivers ?? []
                 self.seriesTitle = "\(results.mrData?.series ?? "") - \(results.mrData?.driverTable?.season ?? "") Season"

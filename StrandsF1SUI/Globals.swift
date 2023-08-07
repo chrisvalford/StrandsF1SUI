@@ -7,13 +7,13 @@
 
 import Foundation
 
-func ageInYears(from dob: String) -> Int {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd"
-
-    guard let dob = formatter.date(from: dob) else {
-        return 0
-    }
+func ageInYears(from dob: Date) -> Int {
+//    let formatter = DateFormatter()
+//    formatter.dateFormat = "yyyy-MM-dd"
+//
+//    guard let dob = formatter.date(from: dob) else {
+//        return 0
+//    }
 
     let userLocale = Locale.autoupdatingCurrent
     var calendar = Calendar(identifier: .gregorian)
@@ -26,16 +26,14 @@ func ageInYears(from dob: String) -> Int {
 }
 
 extension String {
-    func formattedDate() -> Date? {
+    func formattedDate() -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.date(from: self)
+        return formatter.date(from: self) ?? Date(timeIntervalSinceReferenceDate: 0)
     }
 
     func raceDate() -> String {
-        guard let date = self.formattedDate() else {
-            return ""
-        }
+        let date = self.formattedDate()
         let userLocale = Locale.autoupdatingCurrent
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = userLocale

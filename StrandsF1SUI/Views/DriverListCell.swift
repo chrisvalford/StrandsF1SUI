@@ -18,7 +18,7 @@ struct DriverListCell: View {
                         .font(.title)
                 HStack {
                         Text("age: \(driver.age)")
-                    Text("\(driver.nationality ?? "") \(CountryLookup.flag(forNationality: driver.nationality ?? ""))")
+                    Text("\(driver.nationality ?? "") \(CountryLookup.flag(forNationality: driver.nationality))")
                     }
                 }
             Spacer()
@@ -35,7 +35,7 @@ struct DriverListCell_Previews: PreviewProvider {
                                url: URL(string: "http://en.wikipedia.org/wiki/Valtteri_Bottas")!,
                                givenName: "Valtteri",
                                familyName: "Bottas",
-                               dateOfBirth: "1989-08-28",
+                               dateOfBirth: dateFormatter.date(from: "1989-08-28")!,
                                nationality: "Finnish")
     static var previews: some View {
         DriverListCell(driver: driver)

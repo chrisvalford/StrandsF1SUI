@@ -19,7 +19,7 @@ struct RaceListCell: View {
         }
         Text(race.circuit?.circuitName ?? "")
         HStack {
-            Text(race.date ?? "")
+            Text("\(dateFormatter.string(from: race.date))")
             Spacer()
             Text("Finished: ")
             Text(race.results?[0].position ?? "")
