@@ -22,7 +22,7 @@ struct DriverListCell: View {
                     }
                 }
             Spacer()
-            DriverNumberView(number: driver.permanentNumber ?? "0")
+            DriverNumberView(number: driver.permanentNumber)
         }
     }
 }

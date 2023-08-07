@@ -68,7 +68,7 @@ class DriverModel: ObservableObject {
             case .name:
                 return filteredDrivers.sorted(by: { $0.fullName < $1.fullName })
             case .permanentNumber:
-                return filteredDrivers.sorted(by: { Int($0.permanentNumber ?? "0") ?? 0 < Int($1.permanentNumber ?? "0") ?? 0 })
+                return filteredDrivers.sorted(by: { Int($0.permanentNumber) ?? 0 < Int($1.permanentNumber) ?? 0 })
             case .age:
                 return filteredDrivers.sorted(by: { $0.age < $1.age })
             case .nationality:

@@ -10,8 +10,8 @@ import Foundation
 struct RaceResult: Identifiable {
     let raceDate: Date
     let driverId: String
-    let position: Int
-    let points: Int
+    let position: String
+    let points: String
 
     var id: String {
         return "\(raceDate.description)\(driverId)"
@@ -38,8 +38,8 @@ class DriverDetailModel: ObservableObject {
                 for result in race.results! {
                     let raceResult = RaceResult(raceDate: race.date,
                                                 driverId: (result.driver?.driverId)!,
-                                                position: Int(result.position!) ?? 0,
-                                                points: Int(result.points!) ?? 0)
+                                                position: result.position ?? "0",
+                                                points: result.points ?? "0")
                     constructor = result.constructor
                     raceResults.append(raceResult)
                 }

@@ -33,4 +33,14 @@ final class StrandsF1SUITests: XCTestCase {
         }
     }
 
+    func testDateConversion() throws {
+        let sample = "2023-08-07"
+        let date = dateFormatter.date(from: sample)!
+        var dateComponent = DateComponents()
+        dateComponent.day = 1
+        let plusOneDay = Calendar.current.date(byAdding: dateComponent, to: date)!
+        let text = dateFormatter.string(from: plusOneDay)
+        XCTAssert(text == "2023-08-08")
+    }
+
 }

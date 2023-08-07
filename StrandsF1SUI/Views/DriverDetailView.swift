@@ -30,7 +30,7 @@ struct DriverDetailView: View {
                             .font(.subheadline)
                     }
                     Spacer()
-                    DriverNumberView(number: model.driver.permanentNumber ?? "0")
+                    DriverNumberView(number: model.driver.permanentNumber)
                 }
             }
             .padding()

@@ -35,8 +35,11 @@ final class StrandsF1DecodableTests: XCTestCase {
     func testDriverDecode() throws {
         let driverJSON = "{\"driverId\":\"albon\",\"permanentNumber\":\"23\",\"code\":\"ALB\",\"url\":\"http://en.wikipedia.org/wiki/Alexander_Albon\",\"givenName\":\"Alexander\",\"familyName\":\"Albon\",\"dateOfBirth\":\"1996-03-23\",\"nationality\":\"Thai\"}"
         let data = Data(driverJSON.utf8)
-        let obj = try JSONDecoder().decode(Driver.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        let obj = try decoder.decode(Driver.self, from: data)
         XCTAssert(obj.givenName == "Alexander")
+        let dob = dateFormatter.date(from: "1996-03-23")
+        XCTAssert(obj.dateOfBirth == dob)
     }
-
 }

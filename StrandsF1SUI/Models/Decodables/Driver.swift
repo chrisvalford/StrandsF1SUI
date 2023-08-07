@@ -9,7 +9,7 @@ import Foundation
 
 struct Driver : Decodable {
 	let driverId : String?
-	let permanentNumber : String?
+	let permanentNumber : String
 	let code : String?
 	let url : URL?
 	let givenName : String?
@@ -49,7 +49,7 @@ struct Driver : Decodable {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		driverId = try values.decodeIfPresent(String.self, forKey: .driverId)
-		permanentNumber = try values.decodeIfPresent(String.self, forKey: .permanentNumber)
+		permanentNumber = try values.decodeIfPresent(String.self, forKey: .permanentNumber) ?? "0"
 		code = try values.decodeIfPresent(String.self, forKey: .code)
 		url = try values.decodeIfPresent(URL.self, forKey: .url)
 		givenName = try values.decodeIfPresent(String.self, forKey: .givenName)

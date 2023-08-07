@@ -28,6 +28,6 @@ struct DriverNumberView: View {
 
 struct DriverNumberView_Previews: PreviewProvider {
     static var previews: some View {
-        DriverNumberView(number: "11")
+        DriverNumberView(number: "88")
     }
 }

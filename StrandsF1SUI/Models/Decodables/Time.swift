@@ -11,7 +11,6 @@ struct Time : Decodable {
 	let time : String?
 
 	enum CodingKeys: String, CodingKey {
-
 		case time = "time"
 	}
 

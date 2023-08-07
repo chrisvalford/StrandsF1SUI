@@ -24,12 +24,12 @@ struct ResultsChart: View {
         Chart {
             ForEach(raceResults) { result in
                 LineMark(x: .value("Date", result.raceDate),
-                         y: .value("position", result.position))
+                         y: .value("Position", Int(result.position)!))
                 .annotation(position: .top, alignment: .leading) {
                     Text("\(result.position)")
                         .font(.caption2)
                         .padding(5)
-                        .background(result.position < 4 ? Color.yellow : Color.gray.opacity(0.5))
+                        .background(Color(position: result.position))
                          .clipShape(Circle())
                 }
             }
