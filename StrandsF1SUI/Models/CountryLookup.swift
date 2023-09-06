@@ -8,7 +8,7 @@
 import Foundation
 
 struct CountryLookup {
-    private static let countries = ["Thai":"TH","Spanish":"ES","Finnish":"FI","Dutch":"NL","French":"FR","British":"GB","German":"DE","Monegasque":"MC","Danish":"DK","Mexican":"MX","Australian":"AU","American":"US","Canadian":"CA","Japanese":"JP","Chinese":"CN"]
+    private static let countries = ["Thai":"TH","Spanish":"ES","Finnish":"FI","Dutch":"NL","French":"FR","British":"GB","German":"DE","Monegasque":"MC","Danish":"DK","Mexican":"MX","Australian":"AU","American":"US","Canadian":"CA","Japanese":"JP","Chinese":"CN","New Zealander":"NZ"]
 
     /**
      * Create the unicode string for a country flag
