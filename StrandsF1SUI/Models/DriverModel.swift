@@ -65,8 +65,10 @@ class DriverModel: ObservableObject {
             switch selectedSort {
             case .none:
                 return filteredDrivers
-            case .name:
-                return filteredDrivers.sorted(by: { $0.fullName < $1.fullName })
+            case .nameFirstLast:
+                return filteredDrivers.sorted(by: { $0.givenName ?? "" < $1.givenName ?? "" })
+            case .nameLastFirst:
+                return filteredDrivers.sorted(by: { $0.familyName ?? "" < $1.familyName ?? "" })
             case .permanentNumber:
                 return filteredDrivers.sorted(by: { Int($0.permanentNumber) ?? 0 < Int($1.permanentNumber) ?? 0 })
             case .age:
@@ -80,3 +82,8 @@ class DriverModel: ObservableObject {
         }
     }
 }
+
+/*
+ givenName : String,
+ familyName : String,
+ */

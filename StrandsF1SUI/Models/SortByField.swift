@@ -10,7 +10,8 @@ import Foundation
 enum SortByField: CaseIterable, Identifiable, CustomStringConvertible {
     case none
     case permanentNumber
-    case name
+    case nameFirstLast
+    case nameLastFirst
     case age
     case nationality
 
@@ -22,8 +23,10 @@ enum SortByField: CaseIterable, Identifiable, CustomStringConvertible {
             return "Not sorted"
         case .permanentNumber:
             return "Permanent Number"
-        case .name:
-            return "Full name"
+        case .nameFirstLast:
+            return "Name (first, last)"
+        case .nameLastFirst:
+            return "Name (last, first)"
         case .age:
             return "Age"
         case .nationality:
