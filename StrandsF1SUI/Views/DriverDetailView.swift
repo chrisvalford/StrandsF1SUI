@@ -10,8 +10,14 @@ import SwiftUI
 struct DriverDetailView: View {
     @StateObject private var model = DriverDetailModel()
     var driver: Driver
+    @State private var raceResults: [RaceResult] = [] {
+        didSet {
+            print("Detail didSet: \(raceResults.count) results")
+        }
+    }
 
     @State private var x = 0
+    var resultsChart = ResultsChart()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -30,7 +36,8 @@ struct DriverDetailView: View {
                 }
             }
             .padding()
-            ResultsChart(raceResults: model.raceResults)
+            resultsChart
+            //ResultsChart(raceResults: raceResults)
             .frame(height: 200)
             .padding(.horizontal)
             List(model.races, id: \.self) { race in
@@ -38,8 +45,9 @@ struct DriverDetailView: View {
                     .listRowSeparator(.hidden)
             }
         }
-        .onAppear {
-            model.fetch(id: driver.driverId ?? "")
+        .task {
+            let thing = await model.fetch(id: driver.driverId ?? "") ?? []
+            resultsChart.createMarks(raceResults: thing)
         }
         .navigationTitle(driver.fullName)
     }
