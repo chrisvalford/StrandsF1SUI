@@ -23,4 +23,11 @@ extension String {
         let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
         return " \(calendarDate.day ?? 0) \(calendarDate.month ?? 0)"
     }
+
+    var toDate: Date {
+        //"1996-03-23"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-mm-dd"
+        return formatter.date(from: self) ?? Date()
+    }
 }

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct DriverList: View {
+    @State var seriesTitle: String = ""
+    @StateObject private var model = DriverModel()
 
-    @StateObject var model = DriverModel()
-    
     var body: some View {
         NavigationStack {
-            List(model.sortedDrivers, id: \.self) { driver in
+            List(model.drivers, id: \.self) { driver in
                 NavigationLink(destination: DriverDetailView(driver: driver)) {
                     DriverListCell(driver: driver)
                         .frame(height: 100)
@@ -21,7 +21,7 @@ struct DriverList: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .navigationTitle(model.seriesTitle)
+            .navigationTitle(seriesTitle)
             .searchable(text: $model.searchText, prompt: "Filter drivers")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -37,7 +37,11 @@ struct DriverList: View {
                 }
             }
         }
+        .onAppear {
+            model.fetch()
+        }
     }
+
 }
 
 struct DriverList_Previews: PreviewProvider {

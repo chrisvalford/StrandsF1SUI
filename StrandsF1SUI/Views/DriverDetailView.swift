@@ -9,11 +9,8 @@ import SwiftUI
 
 struct DriverDetailView: View {
 
-    var model: DriverDetailModel
-
-    init(driver: Driver) {
-        model = DriverDetailModel(driver: driver)
-    }
+    @StateObject private var model = DriverDetailModel()
+    var driver: Driver
 
     @State private var x = 0
 
@@ -23,14 +20,14 @@ struct DriverDetailView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("Age: \(model.driver.age)")
-                            Text("\(model.driver.nationality ?? "") \(CountryLookup.flag(forNationality: model.driver.nationality))")
+                            Text("Age: \(driver.age)")
+                            Text("\(driver.nationality ?? "") \(CountryLookup.flag(forNationality: driver.nationality))")
                         }
                         Text("Team: \(model.constructor?.name ?? "")")
                             .font(.subheadline)
                     }
                     Spacer()
-                    DriverNumberView(number: model.driver.permanentNumber)
+                    DriverNumberView(number: driver.permanentNumber)
                 }
             }
             .padding()
@@ -42,7 +39,10 @@ struct DriverDetailView: View {
                     .listRowSeparator(.hidden)
             }
         }
-        .navigationTitle(model.driver.fullName)
+        .onAppear {
+            model.fetch(id: driver.driverId ?? "")
+        }
+        .navigationTitle(driver.fullName)
     }
 }
 
