@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DriverDetailView: View {
-
     @StateObject private var model = DriverDetailModel()
     var driver: Driver
 
