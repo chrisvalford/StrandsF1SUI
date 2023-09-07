@@ -20,7 +20,7 @@ struct DriverNumberView: View {
             .padding()
             .overlay(
                 Circle()
-                    .stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: 7)
+                    .stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 5 : 7)
                     .padding(6)
             )
     }
