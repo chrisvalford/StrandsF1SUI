@@ -74,6 +74,7 @@
 		2F96F29F2A810B79003FA775 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F96F29E2A810B79003FA775 /* String+Date.swift */; };
 		2F96F2A12A810BB6003FA775 /* Date+DOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F96F2A02A810BB6003FA775 /* Date+DOB.swift */; };
 		2FE1DACD2AA97C060074EE91 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1DACC2AA97C060074EE91 /* API.swift */; };
+		2FE1DAD02AA98F0D0074EE91 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FE1DACF2AA98F0D0074EE91 /* README.md */; };
 		2FEEECED2A7E922E00F51169 /* DriverDataRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEECEC2A7E922E00F51169 /* DriverDataRoot.swift */; };
 		2FEEECEF2A7E927F00F51169 /* MRDriverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEECEE2A7E927F00F51169 /* MRDriverData.swift */; };
 		2FEEECF12A7E931F00F51169 /* DriverTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEECF02A7E931F00F51169 /* DriverTable.swift */; };
@@ -141,6 +142,7 @@
 		2F96F29E2A810B79003FA775 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		2F96F2A02A810BB6003FA775 /* Date+DOB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DOB.swift"; sourceTree = "<group>"; };
 		2FE1DACC2AA97C060074EE91 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2FE1DACF2AA98F0D0074EE91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2FEEECEC2A7E922E00F51169 /* DriverDataRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDataRoot.swift; sourceTree = "<group>"; };
 		2FEEECEE2A7E927F00F51169 /* MRDriverData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRDriverData.swift; sourceTree = "<group>"; };
 		2FEEECF02A7E931F00F51169 /* DriverTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTable.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				2F8C86E22A7CDFED00E5EF82 /* Views */,
 				2F8C86A62A7CDBEB00E5EF82 /* StrandsF1SUIApp.swift */,
 				2F8C86AA2A7CDBEC00E5EF82 /* Assets.xcassets */,
+				2FE1DACF2AA98F0D0074EE91 /* README.md */,
 				2F8C86AC2A7CDBEC00E5EF82 /* Preview Content */,
 			);
 			path = StrandsF1SUI;
@@ -404,6 +407,7 @@
 			files = (
 				2F8C86AE2A7CDBEC00E5EF82 /* Preview Assets.xcassets in Resources */,
 				2F8C86AB2A7CDBEC00E5EF82 /* Assets.xcassets in Resources */,
+				2FE1DAD02AA98F0D0074EE91 /* README.md in Resources */,
 				2F4C9D982A7E676800DBD1C7 /* albon.json in Resources */,
 				2F8C86DD2A7CDDCD00E5EF82 /* drivers.json in Resources */,
 			);
@@ -656,6 +660,7 @@
 				DEVELOPMENT_TEAM = 3G54NEN3F6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Strands F1";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -685,6 +690,7 @@
 				DEVELOPMENT_TEAM = 3G54NEN3F6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Strands F1";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
