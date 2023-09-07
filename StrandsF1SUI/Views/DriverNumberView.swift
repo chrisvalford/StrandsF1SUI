@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DriverNumberView: View {
-
+    @Environment(\.colorScheme) var colorScheme
     var number: String
 
     var body: some View {
@@ -20,7 +20,7 @@ struct DriverNumberView: View {
             .padding()
             .overlay(
                 Circle()
-                    .stroke(Color.black, lineWidth: 7)
+                    .stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 5 : 7)
                     .padding(6)
             )
     }
@@ -28,6 +28,9 @@ struct DriverNumberView: View {
 
 struct DriverNumberView_Previews: PreviewProvider {
     static var previews: some View {
-        DriverNumberView(number: "88")
+        ForEach(ColorScheme.allCases, id:\.self) {
+            DriverNumberView(number: "88")
+                .preferredColorScheme($0)
+        }
     }
 }
