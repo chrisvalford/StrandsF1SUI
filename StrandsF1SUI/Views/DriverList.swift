@@ -10,6 +10,7 @@ import SwiftUI
 struct DriverList: View {
     @State var seriesTitle: String = ""
     @StateObject private var model = DriverModel()
+    @ObservedObject private var networkMonitor = NetworkMonitor()
 
     var body: some View {
         NavigationStack {
@@ -40,6 +41,7 @@ struct DriverList: View {
         .onAppear {
             model.fetch()
         }
+        .popup(isPresented: !networkMonitor.connected, alignment: .top, direction: .top, content: WarningPanel.init)
     }
 
 }

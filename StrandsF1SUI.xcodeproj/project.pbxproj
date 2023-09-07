@@ -47,6 +47,10 @@
 		2F86F5532A80DCC000549F7C /* DriverNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49D64C2A7D1A40000C4484 /* DriverNumberView.swift */; };
 		2F86F5542A80DCDD00549F7C /* RaceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEECF22A7E9DC100F51169 /* RaceListCell.swift */; };
 		2F86F5562A80DD3100549F7C /* StrandsF1DecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F86F5552A80DD3100549F7C /* StrandsF1DecodableTests.swift */; };
+		2F876B782AAA29CF0083F6F7 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F876B772AAA29CE0083F6F7 /* Popup.swift */; };
+		2F876B7A2AAA2A9E0083F6F7 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F876B792AAA2A9E0083F6F7 /* NetworkMonitor.swift */; };
+		2F876B7D2AAA2B4D0083F6F7 /* WarningPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F876B7C2AAA2B4D0083F6F7 /* WarningPanel.swift */; };
+		2F876B7F2AAA2B5B0083F6F7 /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F876B7E2AAA2B5B0083F6F7 /* CustomShape.swift */; };
 		2F8C86A72A7CDBEB00E5EF82 /* StrandsF1SUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8C86A62A7CDBEB00E5EF82 /* StrandsF1SUIApp.swift */; };
 		2F8C86AB2A7CDBEC00E5EF82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8C86AA2A7CDBEC00E5EF82 /* Assets.xcassets */; };
 		2F8C86AE2A7CDBEC00E5EF82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8C86AD2A7CDBEC00E5EF82 /* Preview Assets.xcassets */; };
@@ -121,6 +125,10 @@
 		2F4C9DA52A7E6A1500DBD1C7 /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		2F8421692AA9E34B002AF4D7 /* PlotMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotMark.swift; sourceTree = "<group>"; };
 		2F86F5552A80DD3100549F7C /* StrandsF1DecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrandsF1DecodableTests.swift; sourceTree = "<group>"; };
+		2F876B772AAA29CE0083F6F7 /* Popup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		2F876B792AAA2A9E0083F6F7 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		2F876B7C2AAA2B4D0083F6F7 /* WarningPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningPanel.swift; sourceTree = "<group>"; };
+		2F876B7E2AAA2B5B0083F6F7 /* CustomShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
 		2F8C86A32A7CDBEB00E5EF82 /* StrandsF1SUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrandsF1SUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8C86A62A7CDBEB00E5EF82 /* StrandsF1SUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrandsF1SUIApp.swift; sourceTree = "<group>"; };
 		2F8C86AA2A7CDBEC00E5EF82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +207,16 @@
 			path = Decodables;
 			sourceTree = "<group>";
 		};
+		2F876B7B2AAA2B390083F6F7 /* Custom Popup */ = {
+			isa = PBXGroup;
+			children = (
+				2F876B7E2AAA2B5B0083F6F7 /* CustomShape.swift */,
+				2F876B772AAA29CE0083F6F7 /* Popup.swift */,
+				2F876B7C2AAA2B4D0083F6F7 /* WarningPanel.swift */,
+			);
+			path = "Custom Popup";
+			sourceTree = "<group>";
+		};
 		2F8C869A2A7CDBEB00E5EF82 = {
 			isa = PBXGroup;
 			children = (
@@ -270,14 +288,14 @@
 				2F4C9D992A7E69FE00DBD1C7 /* Decodables */,
 				2F8C86E32A7CE01700E5EF82 /* CoreData */,
 				2F8C86D92A7CDDCD00E5EF82 /* DriverModel.swift */,
-				2FEEECF42A7EA64400F51169 /* DriverDetailModel.swift */,
-				2F4C9D952A7E44D000DBD1C7 /* SortByField.swift */,
-				2F8C86F02A7D0B6900E5EF82 /* CountryLookup.swift */,
-				2F2A07BC2AA8D56D0090A41C /* RaceResult.swift */,
-				2F2A07BE2AA8D5BF0090A41C /* APIError.swift */,
 				2FE1DACC2AA97C060074EE91 /* API.swift */,
+				2F2A07BE2AA8D5BF0090A41C /* APIError.swift */,
 				2F2A07C02AA8D8920090A41C /* Cache.swift */,
-				2F8421692AA9E34B002AF4D7 /* PlotMark.swift */,
+				2F8C86F02A7D0B6900E5EF82 /* CountryLookup.swift */,
+				2FEEECF42A7EA64400F51169 /* DriverDetailModel.swift */,
+				2F876B792AAA2A9E0083F6F7 /* NetworkMonitor.swift */,
+				2F2A07BC2AA8D56D0090A41C /* RaceResult.swift */,
+				2F4C9D952A7E44D000DBD1C7 /* SortByField.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +303,7 @@
 		2F8C86E22A7CDFED00E5EF82 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F876B7B2AAA2B390083F6F7 /* Custom Popup */,
 				2F8C86E42A7CE06A00E5EF82 /* DriverList.swift */,
 				2F8C86EA2A7D025000E5EF82 /* DriverListCell.swift */,
 				2F8C86ED2A7D08DF00E5EF82 /* DriverDetailView.swift */,
@@ -439,10 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F876B7F2AAA2B5B0083F6F7 /* CustomShape.swift in Sources */,
 				2F2A07BD2AA8D56D0090A41C /* RaceResult.swift in Sources */,
 				2FEEECF12A7E931F00F51169 /* DriverTable.swift in Sources */,
 				2F4C9DA72A7E6A1500DBD1C7 /* RaceTable.swift in Sources */,
 				2F2A07BF2AA8D5BF0090A41C /* APIError.swift in Sources */,
+				2F876B782AAA29CF0083F6F7 /* Popup.swift in Sources */,
 				2F4C9D962A7E44D000DBD1C7 /* SortByField.swift in Sources */,
 				2F4C9DA82A7E6A1500DBD1C7 /* Location.swift in Sources */,
 				2F84216A2AA9E34B002AF4D7 /* PlotMark.swift in Sources */,
@@ -465,6 +486,7 @@
 				2F2A07C12AA8D8920090A41C /* Cache.swift in Sources */,
 				2FEEECED2A7E922E00F51169 /* DriverDataRoot.swift in Sources */,
 				2F4C9DAF2A7E6A1500DBD1C7 /* FastestLap.swift in Sources */,
+				2F876B7D2AAA2B4D0083F6F7 /* WarningPanel.swift in Sources */,
 				2FEEECF52A7EA64400F51169 /* DriverDetailModel.swift in Sources */,
 				2F8C86E02A7CDDFD00E5EF82 /* Globals.swift in Sources */,
 				2F4C9DAB2A7E6A1500DBD1C7 /* Constructor.swift in Sources */,
@@ -474,6 +496,7 @@
 				2FEEECF32A7E9DC100F51169 /* RaceListCell.swift in Sources */,
 				2F8C86A72A7CDBEB00E5EF82 /* StrandsF1SUIApp.swift in Sources */,
 				2F96F29A2A80E43A003FA775 /* ResultsChart.swift in Sources */,
+				2F876B7A2AAA2A9E0083F6F7 /* NetworkMonitor.swift in Sources */,
 				2F8C86EE2A7D08DF00E5EF82 /* DriverDetailView.swift in Sources */,
 				2F4C9DA62A7E6A1500DBD1C7 /* Circuit.swift in Sources */,
 			);
