@@ -78,6 +78,15 @@
 		2F96F29D2A810B41003FA775 /* Color+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F96F29C2A810B41003FA775 /* Color+Position.swift */; };
 		2F96F29F2A810B79003FA775 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F96F29E2A810B79003FA775 /* String+Date.swift */; };
 		2F96F2A12A810BB6003FA775 /* Date+DOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F96F2A02A810BB6003FA775 /* Date+DOB.swift */; };
+		2FA0921E2B45562D00E57D81 /* StrandsTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0921D2B45562D00E57D81 /* StrandsTVApp.swift */; };
+		2FA092202B45562D00E57D81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0921F2B45562D00E57D81 /* ContentView.swift */; };
+		2FA092222B45563000E57D81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA092212B45563000E57D81 /* Assets.xcassets */; };
+		2FA092252B45563000E57D81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA092242B45563000E57D81 /* Preview Assets.xcassets */; };
+		2FA092272B45563000E57D81 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA092262B45563000E57D81 /* Persistence.swift */; };
+		2FA0922A2B45563000E57D81 /* StrandsTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FA092282B45563000E57D81 /* StrandsTV.xcdatamodeld */; };
+		2FA092342B45563100E57D81 /* StrandsTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA092332B45563100E57D81 /* StrandsTVTests.swift */; };
+		2FA0923E2B45563100E57D81 /* StrandsTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0923D2B45563100E57D81 /* StrandsTVUITests.swift */; };
+		2FA092402B45563100E57D81 /* StrandsTVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0923F2B45563100E57D81 /* StrandsTVUITestsLaunchTests.swift */; };
 		2FE1DACD2AA97C060074EE91 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1DACC2AA97C060074EE91 /* API.swift */; };
 		2FE1DAD02AA98F0D0074EE91 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FE1DACF2AA98F0D0074EE91 /* README.md */; };
 		2FEEECED2A7E922E00F51169 /* DriverDataRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEECEC2A7E922E00F51169 /* DriverDataRoot.swift */; };
@@ -101,6 +110,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2F8C86A22A7CDBEB00E5EF82;
 			remoteInfo = StrandsF1SUI;
+		};
+		2FA092302B45563100E57D81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F8C869B2A7CDBEB00E5EF82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FA0921A2B45562D00E57D81;
+			remoteInfo = StrandsTV;
+		};
+		2FA0923A2B45563100E57D81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F8C869B2A7CDBEB00E5EF82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FA0921A2B45562D00E57D81;
+			remoteInfo = StrandsTV;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -152,6 +175,18 @@
 		2F96F29C2A810B41003FA775 /* Color+Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Position.swift"; sourceTree = "<group>"; };
 		2F96F29E2A810B79003FA775 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		2F96F2A02A810BB6003FA775 /* Date+DOB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DOB.swift"; sourceTree = "<group>"; };
+		2FA0921B2B45562D00E57D81 /* StrandsTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrandsTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA0921D2B45562D00E57D81 /* StrandsTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrandsTVApp.swift; sourceTree = "<group>"; };
+		2FA0921F2B45562D00E57D81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2FA092212B45563000E57D81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FA092242B45563000E57D81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2FA092262B45563000E57D81 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		2FA092292B45563000E57D81 /* StrandsTV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StrandsTV.xcdatamodel; sourceTree = "<group>"; };
+		2FA0922F2B45563100E57D81 /* StrandsTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrandsTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA092332B45563100E57D81 /* StrandsTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrandsTVTests.swift; sourceTree = "<group>"; };
+		2FA092392B45563100E57D81 /* StrandsTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrandsTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA0923D2B45563100E57D81 /* StrandsTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrandsTVUITests.swift; sourceTree = "<group>"; };
+		2FA0923F2B45563100E57D81 /* StrandsTVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrandsTVUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2FE1DACC2AA97C060074EE91 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2FE1DACF2AA98F0D0074EE91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		2FEEECEC2A7E922E00F51169 /* DriverDataRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDataRoot.swift; sourceTree = "<group>"; };
@@ -177,6 +212,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2F8C86BF2A7CDBED00E5EF82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA092182B45562D00E57D81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA0922C2B45563100E57D81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA092362B45563100E57D81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,6 +288,9 @@
 				2F8C86A52A7CDBEB00E5EF82 /* StrandsF1SUI */,
 				2F8C86BB2A7CDBED00E5EF82 /* StrandsF1SUITests */,
 				2F8C86C52A7CDBED00E5EF82 /* StrandsF1SUIUITests */,
+				2FA0921C2B45562D00E57D81 /* StrandsTV */,
+				2FA092322B45563100E57D81 /* StrandsTVTests */,
+				2FA0923C2B45563100E57D81 /* StrandsTVUITests */,
 				2F8C86A42A7CDBEB00E5EF82 /* Products */,
 				2F876B812AAA37910083F6F7 /* Recovered References */,
 			);
@@ -243,6 +302,9 @@
 				2F8C86A32A7CDBEB00E5EF82 /* StrandsF1SUI.app */,
 				2F8C86B82A7CDBED00E5EF82 /* StrandsF1SUITests.xctest */,
 				2F8C86C22A7CDBED00E5EF82 /* StrandsF1SUIUITests.xctest */,
+				2FA0921B2B45562D00E57D81 /* StrandsTV.app */,
+				2FA0922F2B45563100E57D81 /* StrandsTVTests.xctest */,
+				2FA092392B45563100E57D81 /* StrandsTVUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +396,44 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		2FA0921C2B45562D00E57D81 /* StrandsTV */ = {
+			isa = PBXGroup;
+			children = (
+				2FA0921D2B45562D00E57D81 /* StrandsTVApp.swift */,
+				2FA0921F2B45562D00E57D81 /* ContentView.swift */,
+				2FA092212B45563000E57D81 /* Assets.xcassets */,
+				2FA092262B45563000E57D81 /* Persistence.swift */,
+				2FA092282B45563000E57D81 /* StrandsTV.xcdatamodeld */,
+				2FA092232B45563000E57D81 /* Preview Content */,
+			);
+			path = StrandsTV;
+			sourceTree = "<group>";
+		};
+		2FA092232B45563000E57D81 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2FA092242B45563000E57D81 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2FA092322B45563100E57D81 /* StrandsTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FA092332B45563100E57D81 /* StrandsTVTests.swift */,
+			);
+			path = StrandsTVTests;
+			sourceTree = "<group>";
+		};
+		2FA0923C2B45563100E57D81 /* StrandsTVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2FA0923D2B45563100E57D81 /* StrandsTVUITests.swift */,
+				2FA0923F2B45563100E57D81 /* StrandsTVUITestsLaunchTests.swift */,
+			);
+			path = StrandsTVUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,6 +490,59 @@
 			productReference = 2F8C86C22A7CDBED00E5EF82 /* StrandsF1SUIUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		2FA0921A2B45562D00E57D81 /* StrandsTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA092472B45563100E57D81 /* Build configuration list for PBXNativeTarget "StrandsTV" */;
+			buildPhases = (
+				2FA092172B45562D00E57D81 /* Sources */,
+				2FA092182B45562D00E57D81 /* Frameworks */,
+				2FA092192B45562D00E57D81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StrandsTV;
+			productName = StrandsTV;
+			productReference = 2FA0921B2B45562D00E57D81 /* StrandsTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FA0922E2B45563100E57D81 /* StrandsTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA092482B45563100E57D81 /* Build configuration list for PBXNativeTarget "StrandsTVTests" */;
+			buildPhases = (
+				2FA0922B2B45563100E57D81 /* Sources */,
+				2FA0922C2B45563100E57D81 /* Frameworks */,
+				2FA0922D2B45563100E57D81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FA092312B45563100E57D81 /* PBXTargetDependency */,
+			);
+			name = StrandsTVTests;
+			productName = StrandsTVTests;
+			productReference = 2FA0922F2B45563100E57D81 /* StrandsTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2FA092382B45563100E57D81 /* StrandsTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA092492B45563100E57D81 /* Build configuration list for PBXNativeTarget "StrandsTVUITests" */;
+			buildPhases = (
+				2FA092352B45563100E57D81 /* Sources */,
+				2FA092362B45563100E57D81 /* Frameworks */,
+				2FA092372B45563100E57D81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FA0923B2B45563100E57D81 /* PBXTargetDependency */,
+			);
+			name = StrandsTVUITests;
+			productName = StrandsTVUITests;
+			productReference = 2FA092392B45563100E57D81 /* StrandsTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -397,7 +550,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					2F8C86A22A7CDBEB00E5EF82 = {
@@ -410,6 +563,17 @@
 					2F8C86C12A7CDBED00E5EF82 = {
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 2F8C86A22A7CDBEB00E5EF82;
+					};
+					2FA0921A2B45562D00E57D81 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					2FA0922E2B45563100E57D81 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 2FA0921A2B45562D00E57D81;
+					};
+					2FA092382B45563100E57D81 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 2FA0921A2B45562D00E57D81;
 					};
 				};
 			};
@@ -429,6 +593,9 @@
 				2F8C86A22A7CDBEB00E5EF82 /* StrandsF1SUI */,
 				2F8C86B72A7CDBED00E5EF82 /* StrandsF1SUITests */,
 				2F8C86C12A7CDBED00E5EF82 /* StrandsF1SUIUITests */,
+				2FA0921A2B45562D00E57D81 /* StrandsTV */,
+				2FA0922E2B45563100E57D81 /* StrandsTVTests */,
+				2FA092382B45563100E57D81 /* StrandsTVUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -456,6 +623,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2F8C86C02A7CDBED00E5EF82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA092192B45562D00E57D81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA092252B45563000E57D81 /* Preview Assets.xcassets in Resources */,
+				2FA092222B45563000E57D81 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA0922D2B45563100E57D81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA092372B45563100E57D81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -557,6 +747,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2FA092172B45562D00E57D81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA092272B45563000E57D81 /* Persistence.swift in Sources */,
+				2FA092202B45562D00E57D81 /* ContentView.swift in Sources */,
+				2FA0921E2B45562D00E57D81 /* StrandsTVApp.swift in Sources */,
+				2FA0922A2B45563000E57D81 /* StrandsTV.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA0922B2B45563100E57D81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA092342B45563100E57D81 /* StrandsTVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA092352B45563100E57D81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA092402B45563100E57D81 /* StrandsTVUITestsLaunchTests.swift in Sources */,
+				2FA0923E2B45563100E57D81 /* StrandsTVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -569,6 +787,16 @@
 			isa = PBXTargetDependency;
 			target = 2F8C86A22A7CDBEB00E5EF82 /* StrandsF1SUI */;
 			targetProxy = 2F8C86C32A7CDBED00E5EF82 /* PBXContainerItemProxy */;
+		};
+		2FA092312B45563100E57D81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FA0921A2B45562D00E57D81 /* StrandsTV */;
+			targetProxy = 2FA092302B45563100E57D81 /* PBXContainerItemProxy */;
+		};
+		2FA0923B2B45563100E57D81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FA0921A2B45562D00E57D81 /* StrandsTV */;
+			targetProxy = 2FA0923A2B45563100E57D81 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -823,6 +1051,171 @@
 			};
 			name = Release;
 		};
+		2FA092412B45563100E57D81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StrandsTV/Preview Content\"";
+				DEVELOPMENT_TEAM = 3G54NEN3F6;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = digital.marine.StrandsTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.2;
+			};
+			name = Debug;
+		};
+		2FA092422B45563100E57D81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StrandsTV/Preview Content\"";
+				DEVELOPMENT_TEAM = 3G54NEN3F6;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = digital.marine.StrandsTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.2;
+			};
+			name = Release;
+		};
+		2FA092432B45563100E57D81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G54NEN3F6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = digital.marine.StrandsTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrandsTV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StrandsTV";
+				TVOS_DEPLOYMENT_TARGET = 17.2;
+			};
+			name = Debug;
+		};
+		2FA092442B45563100E57D81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G54NEN3F6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = digital.marine.StrandsTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrandsTV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StrandsTV";
+				TVOS_DEPLOYMENT_TARGET = 17.2;
+			};
+			name = Release;
+		};
+		2FA092452B45563100E57D81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G54NEN3F6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = digital.marine.StrandsTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = StrandsTV;
+				TVOS_DEPLOYMENT_TARGET = 17.2;
+			};
+			name = Debug;
+		};
+		2FA092462B45563100E57D81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3G54NEN3F6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = digital.marine.StrandsTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = StrandsTV;
+				TVOS_DEPLOYMENT_TARGET = 17.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -862,6 +1255,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2FA092472B45563100E57D81 /* Build configuration list for PBXNativeTarget "StrandsTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA092412B45563100E57D81 /* Debug */,
+				2FA092422B45563100E57D81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FA092482B45563100E57D81 /* Build configuration list for PBXNativeTarget "StrandsTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA092432B45563100E57D81 /* Debug */,
+				2FA092442B45563100E57D81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FA092492B45563100E57D81 /* Build configuration list for PBXNativeTarget "StrandsTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA092452B45563100E57D81 /* Debug */,
+				2FA092462B45563100E57D81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
@@ -872,6 +1292,16 @@
 			);
 			currentVersion = 2F8C86B22A7CDBEC00E5EF82 /* StrandsF1SUI.xcdatamodel */;
 			path = StrandsF1SUI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		2FA092282B45563000E57D81 /* StrandsTV.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2FA092292B45563000E57D81 /* StrandsTV.xcdatamodel */,
+			);
+			currentVersion = 2FA092292B45563000E57D81 /* StrandsTV.xcdatamodel */;
+			path = StrandsTV.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
