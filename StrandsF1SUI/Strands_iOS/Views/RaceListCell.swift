@@ -12,17 +12,24 @@ struct RaceListCell: View {
     var race: Races
     
     var body: some View {
-        HStack {
-            Text("Round: ")
-            Text(race.round ?? "")
-            Spacer()
-        }
-        Text(race.circuit?.circuitName ?? "")
-        HStack {
-            Text("\(dateFormatter.string(from: race.date))")
-            Spacer()
-            Text("Finished: ")
-            Text(race.results?[0].position ?? "")
+        ZStack {
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(.teal)
+            VStack {
+                HStack {
+                    Text("Round: ")
+                    Text(race.round ?? "")
+                    Spacer()
+                    Text(race.circuit?.circuitName ?? "")
+                }
+                HStack {
+                    Text("\(dateFormatter.string(from: race.date))")
+                    Spacer()
+                    Text("Finished: ")
+                    Text(race.results?[0].position ?? "")
+                }
+            }
+            .padding()
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DriverList: View {
     @State var seriesTitle: String = ""
-    @StateObject private var model = DriverModel()
+    @StateObject private var model = DataProvider()
     @ObservedObject private var networkMonitor = NetworkMonitor()
 
     var body: some View {

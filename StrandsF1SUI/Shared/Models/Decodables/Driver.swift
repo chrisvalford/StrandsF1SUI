@@ -81,3 +81,16 @@ extension Driver: Identifiable, Hashable {
         hasher.combine(driverId)
     }
 }
+
+extension Driver {
+    init() {
+        driverId = "0000"
+        permanentNumber = "0"
+        code = "000"
+        url = URL(string: "https://marine.digital")!
+        givenName = ""
+        familyName = ""
+        dateOfBirth = Date()
+        nationality = ""
+    }
+}

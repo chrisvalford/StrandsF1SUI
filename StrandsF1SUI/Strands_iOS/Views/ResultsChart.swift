@@ -16,11 +16,7 @@ struct ResultsChart: View {
 //        }
 //    }
 
-    @State private var plotMarks: [PlotMark] = [] {
-        didSet {
-            print("Have \(plotMarks.count) plotmarks")
-        }
-    }
+    @State private var plotMarks: [PlotMark] = []
 
     var body: some View {
         VStack {
@@ -62,7 +58,7 @@ struct ResultsChart: View {
             i += 1
             plotMark.average = sum / Double(i)
             self.plotMarks.append(plotMark)
-            print("Have \(self.plotMarks.count) plotMarks")
+            //print("Have \(self.plotMarks.count) plotMarks")
         }
     }
 }

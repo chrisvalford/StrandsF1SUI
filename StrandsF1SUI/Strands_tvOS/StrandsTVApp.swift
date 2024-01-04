@@ -13,7 +13,7 @@ struct StrandsTVApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(selectedDriver: Driver())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
