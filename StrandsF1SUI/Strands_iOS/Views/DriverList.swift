@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DriverList: View {
     @State var seriesTitle: String = ""
-    @StateObject private var model = DataProvider()
+    @StateObject private var model = DriverService()
     @ObservedObject private var networkMonitor = NetworkMonitor()
 
     var body: some View {
@@ -38,8 +38,12 @@ struct DriverList: View {
                 }
             }
         }
-        .onAppear {
-            model.fetch()
+        .task {
+            do {
+                try await model.getAllDrivers()
+            } catch {
+                print(error)
+            }
         }
         .popup(isPresented: !networkMonitor.connected, alignment: .top, direction: .top, content: WarningPanel.init)
     }
