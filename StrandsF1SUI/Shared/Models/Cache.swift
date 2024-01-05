@@ -33,7 +33,7 @@ class Cache {
                 try context.save()
             }
         } catch {
-            throw APIError.cacheError
+            throw ServiceError.cacheError
         }
     }
 
@@ -45,14 +45,14 @@ class Cache {
             let cacheItems = try context.fetch(fetchRequest)
             if cacheItems.count > 0 {
                 guard let first = cacheItems.first else {
-                    throw APIError.cacheError
+                    throw ServiceError.cacheError
                 }
                 return first.data
             } else {
-                throw APIError.cacheEmpty
+                throw ServiceError.cacheEmpty
             }
         } catch {
-            throw APIError.cacheError
+            throw ServiceError.cacheError
         }
     }
 }

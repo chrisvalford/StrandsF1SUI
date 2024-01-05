@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Constructor : Decodable {
+struct Constructor : Decodable, Equatable {
 	let constructorId : String?
 	let url : String?
 	let name : String?

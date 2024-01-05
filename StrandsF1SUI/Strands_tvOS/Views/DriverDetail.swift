@@ -9,13 +9,14 @@ import SwiftUI
 import Kingfisher
 
 struct DriverDetail: View {
-    @EnvironmentObject var model: DataProvider
+    
+    @EnvironmentObject var driverService: DriverService
+    @StateObject var raceService = RaceService()
 
     @Binding var driver: Driver
-    @State private var raceResults: [RaceResult] = []
 
     @State private var x = 0
-    var resultsChart = ResultsChart()
+    //var resultsChart = ResultsChart()
     @State private var driverImage: KFImage?
 
     var body: some View {
@@ -35,18 +36,16 @@ struct DriverDetail: View {
                 DriverNumberView(number: driver.permanentNumber)
                 Text("Age: \(driver.age)")
                 Text("\(driver.nationality ?? "") \(CountryLookup.flag(forNationality: driver.nationality))")
-                Text("Team: \(model.constructor?.name ?? "")")
+                Text("Team: \(raceService.constructor?.name ?? "")")
                     .font(.subheadline)
             }
-            List(model.races, id: \.self) { race in
+            List(raceService.races, id: \.self) { race in
                 RaceListCell(race: race)
                     .focusable()
             }
-            resultsChart
+            ResultsChart(plotMarks: raceService.plotMarks)
         }
-
-        //ResultsChart(raceResults: raceResults)
-        .frame(height: 600)
+        .frame(height: 500)
         .padding(.horizontal)
         .onAppear {
             updateDriver()
@@ -59,9 +58,9 @@ struct DriverDetail: View {
     private func updateDriver() {
         Task {
             if driver.id != "0000" {
-                let results = await model.fetchResults(id: driver.driverId ?? "") ?? []
-                resultsChart.createMarks(raceResults: results)
-                let url = model.imageURLForDriver(id: driver.id)!
+                try await raceService.getResults(forDriver: driver.driverId ?? "")
+                //resultsChart.createMarks(raceResults: model.results)
+                let url = driverService.imageURLForDriver(id: driver.id)!
                 driverImage = KFImage(url)
             } else {
                 driverImage = KFImage(URL(string: "https://marine.digital/f1/drivers/640/lewis_hamilton")!)

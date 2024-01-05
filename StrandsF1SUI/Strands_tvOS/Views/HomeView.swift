@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
 
-    @StateObject var model = DataProvider()
+    @StateObject var driverService = DriverService()
     @State var selectedDriver: Driver
 
     let rows = [GridItem(.fixed(400))]
@@ -19,7 +19,7 @@ struct HomeView: View {
             VStack {
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: rows, spacing: 40) {
-                        ForEach(model.drivers, id: \.self) { driver in
+                        ForEach(driverService.drivers, id: \.self) { driver in
                             Button(action: {
                                 selectedDriver = driver
 
@@ -28,20 +28,26 @@ struct HomeView: View {
                                     .frame(height: 100)
                             })
                         }
-                        .frame(height: 200)
+                        //.frame(height: 140)
                     }
                 }
-                Spacer()
                 DriverDetail(driver: $selectedDriver)
-                    .frame(height: 600)
+                    //.frame(height: 400)
+                Spacer()
 
+            }
+        }
+        .task {
+            do {
+                try await driverService.getAllDrivers()
+            } catch {
+                print(error)
             }
         }
         .onAppear {
             selectedDriver = Driver()
-            model.fetchDrivers()
         }
-        .environmentObject(model)
+        .environmentObject(driverService)
     }
 }
 
