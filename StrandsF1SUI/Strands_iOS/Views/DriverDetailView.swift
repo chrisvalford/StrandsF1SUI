@@ -8,16 +8,10 @@
 import SwiftUI
 
 struct DriverDetailView: View {
-    @StateObject private var model = DriverDetailModel()
+    @StateObject private var raceSevice = RaceService()
     var driver: Driver
-    @State private var raceResults: [RaceResult] = [] {
-        didSet {
-            print("Detail didSet: \(raceResults.count) results")
-        }
-    }
 
     @State private var x = 0
-    var resultsChart = ResultsChart()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -28,7 +22,7 @@ struct DriverDetailView: View {
                             Text("Age: \(driver.age)")
                             Text("\(driver.nationality ?? "") \(CountryLookup.flag(forNationality: driver.nationality))")
                         }
-                        Text("Team: \(model.constructor?.name ?? "")")
+                        Text("Team: \(raceSevice.constructor?.name ?? "")")
                             .font(.subheadline)
                     }
                     Spacer()
@@ -36,18 +30,21 @@ struct DriverDetailView: View {
                 }
             }
             .padding()
-            resultsChart
-            //ResultsChart(raceResults: raceResults)
+            ResultsChart(plotMarks: raceSevice.plotMarks)
             .frame(height: 200)
             .padding(.horizontal)
-            List(model.races, id: \.self) { race in
+            List(raceSevice.races, id: \.self) { race in
                 RaceListCell(race: race)
                     .listRowSeparator(.hidden)
             }
+            .listStyle(.plain)
         }
         .task {
-            let thing = await model.fetch(id: driver.driverId ?? "") ?? []
-            resultsChart.createMarks(raceResults: thing)
+            do {
+                try await raceSevice.getResults(forDriver:  driver.driverId ?? "0000")
+            } catch {
+                print(error)
+            }
         }
         .navigationTitle(driver.fullName)
     }
